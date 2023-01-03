@@ -1,0 +1,23 @@
+#mobile-nav {
+	:first-child {
+		min-height: 100%;
+	}
+
+	a {
+		color: rgba($color: $global-inverse-color, $alpha: .6);
+
+		&:hover,
+		&:active {
+			color: $global-inverse-color;
+		}
+	}
+
+	.uk-button-primary {
+		&::before{
+			background-color: darken($color: $global-secondary-background, $amount: 5%);
+		}
+	}
+	.uk-nav.uk-nav-divider> :not(.uk-nav-header, .uk-nav-divider)+ :not(.uk-nav-header, .uk-nav-divider) {
+		border-top-color: rgba($color: $global-inverse-color, $alpha: .15)
+	}
+}

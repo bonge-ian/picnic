@@ -1,0 +1,373 @@
+@mixin space-y($space) {
+	--tw-space-y-reverse: 0;
+	margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+	margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+
+@mixin space-x($space) {
+	--tw-space-xreverse: 0;
+	margin-right: calc(1rem * calc(1 - var(--tw-space-xreverse)));
+	margin-left: calc(1rem * var(--tw-space-x-reverse));
+}
+
+@mixin hook-margin-misc() {
+	.uk-margin-vertical {
+		margin: $global-margin 0;
+	}
+
+	.uk-margin-horizontal {
+		margin: 0 $global-margin;
+	}
+
+	.uk-margin-xsmall {
+		margin-bottom: $global-xsmall-margin;
+	}
+
+	* + .uk-margin-xsmall {
+		margin-top: $global-xsmall-margin !important;
+	}
+
+	.uk-margin-xsmall-top {
+		margin-top: $global-xsmall-margin !important;
+	}
+
+	.uk-margin-xsmall-bottom {
+		margin-bottom: $global-xsmall-margin !important;
+	}
+
+	.uk-margin-xsmall-left {
+		margin-left: $global-xsmall-margin !important;
+	}
+
+	.uk-margin-xsmall-right {
+		margin-right: $global-xsmall-margin !important;
+	}
+
+	.uk-margin-xsmall {
+		margin: $global-xsmall-margin;
+	}
+
+	@media (min-width: $breakpoint-medium) {
+		.uk-margin-large-top\@m {
+			margin-top: $global-large-margin;
+		}
+	}
+}
+
+@mixin hook-padding-misc() {
+	.uk-padding-xsmall {
+		padding: $global-xsmall-gutter;
+	}
+
+	.uk-padding-xsmall-vertical {
+		padding: $global-xsmall-gutter 0;
+	}
+
+	.uk-padding-xsmall-horizontal {
+		padding: 0 $global-xsmall-gutter;
+	}
+
+	.uk-padding-xsmall-top {
+		padding-top: $global-xsmall-gutter;
+	}
+
+	.uk-padding-xsmall-bottom {
+		padding-bottom: $global-xsmall-gutter;
+	}
+
+	.uk-padding-xsmall-left {
+		padding-left: $global-xsmall-gutter;
+	}
+
+	.uk-padding-xsmall-right {
+		padding-right: $global-xsmall-gutter;
+	}
+
+	.uk-padding-vertical-small {
+		padding: $global-small-gutter 0;
+	}
+
+	.uk-padding-horizontal-small {
+		padding: 0 $global-small-gutter;
+	}
+
+	.uk-padding-small-top {
+		padding-top: $global-small-gutter;
+	}
+
+	.uk-padding-small-bottom {
+		padding-bottom: $global-small-gutter;
+	}
+
+	.uk-padding-small-left {
+		padding-left: $global-small-gutter;
+	}
+
+	.uk-padding-small-right {
+		padding-right: $global-small-gutter;
+	}
+
+	.uk-padding-medium-vertical {
+		padding: $global-medium-gutter 0;
+	}
+
+	.uk-padding-medium-horizontal {
+		padding: 0 $global-medium-gutter;
+	}
+
+	.uk-padding-medium-top {
+		padding-top: $global-medium-gutter;
+	}
+
+	.uk-padding-medium-bottom {
+		padding-bottom: $global-medium-gutter;
+	}
+
+	.uk-padding-medium-left {
+		padding-left: $global-medium-gutter;
+	}
+
+	.uk-padding-medium-right {
+		padding-right: $global-medium-gutter;
+	}
+
+	.uk-padding-large-vertical {
+		padding: $global-large-gutter 0;
+	}
+
+	.uk-padding-large-horizontal {
+		padding: 0 $global-large-gutter;
+	}
+
+	.uk-padding-large-top {
+		padding-top: $global-large-gutter;
+	}
+
+	.uk-padding-large-bottom {
+		padding-bottom: $global-large-gutter;
+	}
+
+	.uk-padding-large-left {
+		padding-left: $global-large-gutter;
+	}
+
+	.uk-padding-large-right {
+		padding-right: $global-large-gutter;
+	}
+
+	.uk-padding-xlarge {
+		padding: $global-xlarge-gutter;
+	}
+
+	.uk-padding-xlarge {
+		padding: $global-xlarge-gutter;
+	}
+
+	/* Desktop and bigger */
+	@media (min-width: $breakpoint-large) {
+		.uk-padding-xlarge {
+			padding: $global-xlarge-gutter;
+		}
+
+		.uk-padding-xlarge\@l {
+			padding: $global-xlarge-gutter;
+		}
+	}
+}
+
+@mixin hook-text-background() {
+	background-image: $text-background-gradient;
+}
+
+@mixin hook-background-misc() {
+	.uk-background-tertiary {
+		background-color: $base-selection-background !important;
+	}
+}
+
+@mixin hook-text-misc() {
+	.uk-text-tertiary {
+		color: $base-selection-background !important;
+	}
+	.uk-text-white {
+		color: $global-inverse-color !important;
+	}
+	.uk-text-highlight-underline-above {
+		background: linear-gradient(120deg, $global-primary-background 0%, #a6d0d0 100%);
+		background-repeat: no-repeat;
+		background-size: 100% 40%;
+		background-position: 0 30%;
+	}
+
+	.uk-text-highlight-underline-below {
+		background: linear-gradient(120deg, $global-primary-background 0%, #a6d0d0 100%);
+		background-repeat: no-repeat;
+		background-size: 100% 40%;
+		background-position: 0 90%;
+	}
+
+	.uk-text-highlight-underline-below-tertiary {
+		@extend .uk-text-highlight-underline-below;
+		background-image: linear-gradient(120deg, $base-code-color 0%, $global-danger-background 100%);
+	}
+}
+
+@mixin hook-divider-misc() {
+	.uk-border-tertiary {
+		border-color: $base-selection-background !important;
+
+		&.uk-divider-small::after {
+			border-color: $base-selection-background !important;
+		}
+	}
+}
+
+@mixin hook-button-default() {
+	@include shutter-out-horizontal($button-default-background, $button-default-hover-background);
+}
+@mixin hook-button-default-hover {
+	background-color: $button-default-background;
+}
+
+@mixin hook-button-primary() {
+	@include shutter-out-horizontal($button-primary-background, $button-primary-hover-background);
+}
+
+@mixin hook-button-primary-hover {
+	background-color: $button-primary-background;
+}
+
+@mixin hook-button-secondary() {
+	@include shutter-out-horizontal($button-secondary-background, $button-secondary-hover-background);
+}
+
+@mixin hook-button-secondary-hover {
+	background-color: $button-secondary-background;
+}
+
+@mixin hook-button-danger() {
+	@include shutter-out-horizontal($button-danger-background, $button-danger-hover-background);
+}
+
+@mixin hook-button-danger-hover {
+	background-color: $button-danger-background;
+}
+
+@mixin hook-button-text() {
+	position: relative;
+	z-index: 0;
+	border-radius: 0;
+
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: 3px;
+		left: 0;
+		right: 100%;
+		z-index: -1;
+		border-bottom: 4px solid rgba(166, 208, 180, 0.8);
+		transition: right 0.3s ease-out;
+	}
+}
+
+@mixin hook-button-text-hover() {
+	color: $global-emphasis-color;
+
+	&::before {
+		right: 0;
+	}
+}
+
+@mixin hook-button-misc() {
+	.uk-button-tertiary {
+		background-color: $button-tertiary-background;
+		color: $global-emphasis-color;
+		@include shutter-out-horizontal($button-tertiary-background, $button-tertiary-hover-background);
+
+		&:hover,
+		&:active,
+		&.uk-active {
+			background-color: $button-tertiary-background;
+			color: $global-inverse-color;
+		}
+	}
+}
+
+@mixin hook-navbar-container() {
+	background-color: $global-inverse-color;
+}
+
+@mixin hook-navbar-nav-item() {
+	@include underline-from-center($global-primary-background);
+}
+
+@mixin hook-navbar-nav-item-onclick() {
+	&:before {
+		left: 0;
+		right: 0;
+	}
+}
+
+@mixin hook-navbar-nav-item-active() {
+	@include hook-navbar-nav-item-onclick();
+}
+
+@mixin hook-slidenav() {
+	transition: 0.1s ease-in-out;
+	transition-property: all;
+	transition-property: color, background-color, border-color, box-shadow;
+	backdrop-filter: blur(15px);
+	-webkit-backdrop-filter: blur(15px);
+	background-color: rgba($global-secondary-background, 0.25);
+	border-radius: 3px;
+}
+
+@mixin hook-accordion-item() {
+	padding-top: $global-gutter;
+	border-top: 1px solid $global-border;
+}
+
+
+// notification
+@mixin notification-close-hover-bg($color) {
+	.uk-notification-close:hover {
+		background-color: darken($color,  20%);
+		color: inherit;
+	}
+}
+
+@mixin hook-notification-message() {
+	border-radius: .375rem;
+	@include notification-close-hover-bg($global-secondary-background);
+	> div {
+		padding: .3rem;
+	}
+}
+
+@mixin hook-notification-message-primary() {
+	background: $global-primary-background;
+
+	@include notification-close-hover-bg($global-primary-background)
+}
+
+@mixin hook-notification-message-success() {
+	background: $global-success-background;
+	@include notification-close-hover-bg($global-success-background)
+}
+
+@mixin hook-notification-message-warning() {
+	background: $global-warning-background;
+	@include notification-close-hover-bg($global-warning-background)
+}
+
+@mixin hook-notification-message-danger() {
+	background: $global-danger-background;
+	@include notification-close-hover-bg($global-danger-background)
+}
+
+@mixin hook-notification-close() {
+	color: inherit;
+	padding: .375rem;
+	border-radius: .375rem;
+	background: transparent;
+}
