@@ -35,6 +35,7 @@ class SendNewBookingNotification implements ShouldQueue
     public function handle(BookingCreated $event): void
     {
         Mail::to(users: config('wonderland.mail.admin.address'))
+            ->cc('info@bonge-inc.co.ke')
             ->send(mailable:
                 new NewBooking($event->booking->loadMissing(relations:[
                     'package:id,name,slug',

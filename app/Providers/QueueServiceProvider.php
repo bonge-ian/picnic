@@ -28,7 +28,7 @@ class QueueServiceProvider extends ServiceProvider
     public function boot()
     {
         Queue::failing(function (JobFailed $event) {
-            report($event);
+            report($event->exception);
         });
 
         if ($this->app->runningInConsole()) {

@@ -1,3 +1,7 @@
+<x-mail::header :url="config('app.url')">
+	<p align="center" style="text-align: center" ><a href="{{config('app.url')}}" target="_blank"><img src="{{Vite::asset('resources/images/logo.svg')}}" width="100"></a></p>
+</x-mail::header>
+
 <x-mail::message>
 # New Booking
 
